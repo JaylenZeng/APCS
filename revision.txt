@@ -14,23 +14,13 @@ Ex. 100010 ← this zero would be the starting point
 
 For the starting digit, write down your first power of 2, 2^0. Now that you have designated this first digit as 2^0, continue left through each digit of the binary number. As you go through each digit, designate them with 2^n+1, with n being the previous exponent’s value plus 1. Continue this process until you reach the last possible digit and designating it with a power of 2. 
 
-Ex. (Should look like this):
-
-
-
-
-
-
-
-
-
-
-
 
 Now that this is done, we can finally find our decimal value. Add up the value of every power of 2 designated to a ‘1’. This should be your decimal value. 
 	Ex. (Continuing from the last example)
 2^4 + 2^2 + 2^1 = 22
 10110 = 22
+
+
 4) Now let’s do the opposite. When converting a decimal value to a binary one, we first must find the greatest power of 2 that is less than our given decimal value.
 
 Ex. Given = 74
