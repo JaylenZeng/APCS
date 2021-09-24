@@ -1,0 +1,60 @@
+BINARY
+
+1) The “base” in “base-x” represents a system computers use as a source for a program or application. More specifically, it designates the available numbers in a number system.
+
+Ex. base-10 uses numbers from 0-9 which in total is 10 distinct numbers hence base-10
+
+2) Binary in CS is a number system that uses base-2. This means that instead of using all the numbers from 0-9, it uses only 0s and 1s. Systems that use binary can only have two outcomes. The reason why binary is used is that it is simple/easy to use, and very efficient. 
+
+3) When converting a binary value to a decimal one, you first have to remember that binary is a system that uses base-2. The most important thing when converting binary to decimal is the use of the powers of 2. The reason why we use powers of two is that we’re working with binary (base-2). 
+
+The first thing you want to do is list the powers of two starting from the rightmost digit of the binary number.
+
+Ex. 100010 ← this zero would be the starting point
+
+For the starting digit, write down your first power of 2, 2^0. Now that you have designated this first digit as 2^0, continue left through each digit of the binary number. As you go through each digit, designate them with 2^n+1, with n being the previous exponent’s value plus 1. Continue this process until you reach the last possible digit and designating it with a power of 2. 
+
+Ex. (Should look like this):
+
+
+
+
+
+
+
+
+
+
+
+
+Now that this is done, we can finally find our decimal value. Add up the value of every power of 2 designated to a ‘1’. This should be your decimal value. 
+	Ex. (Continuing from the last example)
+2^4 + 2^2 + 2^1 = 22
+10110 = 22
+4) Now let’s do the opposite. When converting a decimal value to a binary one, we first must find the greatest power of 2 that is less than our given decimal value.
+
+Ex. Given = 74
+2^7 = 128,  2^6 = 64, 2^5 = 32, 2^4 = 16, 2^3 = 8, 2^2 = 4, 2^1 = 2, 2^0 = 1
+(In this case it would be 2^6 or 64)
+
+Subtract this value from the decimal value. 
+
+74  -  64 = 10
+
+Now you repeat. Find the next greatest power of 2 that is less than the difference of the current decimal value and the previous greatest power of 2. 
+
+Ex. 
+Since 74-64 = 10, the next best choice would be 2^3 or 8. 
+10 - 8 = 2
+
+Keep repeating this process until you reach 0. Be sure to keep track of which powers of 2 you use!
+
+2 - 2(2^1) = 0 
+
+Now that we know which powers of 2 will add up to our decimal value, we can create our binary number. If you haven’t already, list out the powers of 2 with the smallest one starting from the right with the powers of 2 increasing as we go left. If we didn’t use that power of 2 to alter our decimal value, put a zero. If we did use it, place a one.  That should be your binary number.
+
+
+
+
+
+
