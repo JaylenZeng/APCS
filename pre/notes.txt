@@ -1,4 +1,1 @@
--ls will list the file in the directory
--Everything seems to work fine.
--Already a lot more work to print something when compared to python.
-  -What's staic and void for? 
+
