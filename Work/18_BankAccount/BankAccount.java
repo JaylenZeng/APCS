@@ -7,8 +7,8 @@ Because we want deposit and withdraw to return a confirmation that it worked, wh
 It's nice outside. "It's like... very sunny" - Yuki
 QCC:
 Why does float not work???
-Q2: 
-Q3: We know that Java must provide a default constructor because we have not defined one, and yet Java does not scream error at us.
+Q2: We know that Java must provide a default constructor because we have not defined one, and yet Java does not scream error at us.
+Q3: A simple test to see if Java provides a string representation is using the built-in print method (System.out.println())
 */
 
 public class BankAccount {
