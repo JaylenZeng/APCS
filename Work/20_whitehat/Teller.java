@@ -1,3 +1,12 @@
+/*
+   Scrooge Playducks - Paul Serbanescu, Yuki Feng, Jaylen Zeng
+   APCS Period 7
+   HW19: External Audit - Hacking
+   10/19/2021
+   DISCO: When including a parameter for a method that returns short, you must include the phrase "(short)" before the value.
+   QCC: Why must we include (short) when calling a method that returns a short value? Is this a special case, or are there other data types that do this?
+*/
+
 public class Teller {
         public static void main(String[] args) {
                 BankAccount tom = new BankAccount(); //Initial method tests. Everything works fine so far... 
