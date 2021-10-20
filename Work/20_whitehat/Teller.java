@@ -17,13 +17,15 @@ public class Teller {
                 tom.setBalance(5);
 
 		//NOTE: Comments placed next to method calls that return unexpected results.
-		tom.setPIN((short) 9999); //This should be a valid PIN. The error message does say to input a PIN below 9999, but I don't see the problem with having your pin set to 9999 since it's also 4 digits
+		tom.setPIN((short) 9999);
 		tom.setPIN((short) 1000);
+		tom.setPIN((short) 2416);
 		tom.setPIN((short) 123);
 
 
 		tom.setAccNum(100000000);
-		tom.setAccNum(999999999); //Same problem with setPIN. Why can't my account number be all 9s?
+		tom.setAccNum(999999999);
+		tom.setAccNum(641209841);
 		tom.setAccNum(12498792);
 		//tom.setAccNum(012345678); Returns error: "Integer number too large". This account number shouldn't work anyway according to the conditional statement, but it's something to think about.
 
