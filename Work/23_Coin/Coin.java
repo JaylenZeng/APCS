@@ -1,7 +1,14 @@
 /***
- *  class Coin
- *  by Clyde "Thluffy" Sinclair
- *  SKELETON
+   Doormen - Jaylen Zeng, Ben Bolester
+   APCS
+   HW23 - What Does Equality Look Like?
+   2021-10-23
+   DISCO: Math.random always returns a double, by default 0 to 1.
+   Methods can call names of objects (as parameters).
+
+   QCC: What are we going to use assignValue() for? 
+
+
  ***/
 
 public class Coin {
@@ -23,7 +30,8 @@ public class Coin {
    *  postcond:
    ***/
   public Coin() {
-  	
+  	bias = 0.5;
+        upFace = "heads";
   }
 
 
@@ -58,24 +66,24 @@ public class Coin {
   // Accessors...
   // ----------------------------
   public String getUpFace() {
-	return upFace;
+	  return upFace;
   }
 
   public int getFlipCtr() {
-	return flipCtr;
+	  return flipCtr;
   }
 
   public double getValue() {
-  	return Value;
+  	return value;
 
   }
 
   public int getHeadsCtr() {
-	return headsCtr;
+	  return headsCtr;
   }
 
   public int getTailsCtr() {
-	return tailsCtr;
+	  return tailsCtr;
   }
   // ----------------------------
 
@@ -87,18 +95,25 @@ public class Coin {
    * Returns value assigned.
    ***/
   private double assignValue( String s ) {
-	if (s) = "penny";
+	if (s == "penny") {
 		value = 0.01;
-	if (s) = "nickel";
+  } 
+  if (s == "nickel") {
 		value = 0.05; 
-	if (s) = "dime";
+  }
+	if (s == "dime") {
 		value = 0.10;
-	if (s) = "quarter";
+  }
+	if (s == "quarter") {
 		value = 0.25;
-	if (s) = "half-dollar";
+  }
+	if (s == "half-dollar") {
 		value = 0.50;
-	if (s) = "dollar";
+  }
+	if (s == "dollar") {
 		value = 1.00;	
+  }
+  return value;
   }
 
 
@@ -108,6 +123,8 @@ public class Coin {
       postcond: Coin's attribs reset to starting vals
   ***/
   public void reset( String s, double d ) {
+    upFace = s;
+    bias = d;
 
   }
 
@@ -122,9 +139,16 @@ public class Coin {
    * Returns "heads" or "tails"
    ***/
   public String flip() {
-	if Math.random()
-
-  }
+	 double a = Math.random();
+   if (a > bias) {
+    upFace = "tails"; 
+    tailsCtr = tailsCtr + 1;
+   }else {
+     upFace = "heads";
+     headsCtr = headsCtr + 1;
+   }
+   return upFace;
+ }
 
 
   /***
@@ -134,8 +158,13 @@ public class Coin {
    * or both showing tails. False otherwise.
    ***/
   public boolean equals( Coin other ) {
-
-  }
+    if (upFace == other.upFace) {
+      return true;
+    }else {
+      return false;
+      }
+    }     
+    
 
 
   /***
@@ -144,7 +173,11 @@ public class Coin {
    * postcond: Return String comprised of name and current face
    ***/
   public String toString() {
+    return (name + "," + upFace);
+  
 
   }
 
+
 }//end class
+
