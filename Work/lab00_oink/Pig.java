@@ -125,24 +125,37 @@ public class Pig {
     return ans;
   }
 
+  public static String sentenceTranslate(String sentence)
+  {
+    String result = "";
+    while (sentence.indexOf(" ") != -1)
+    {
+      String word = sentence.substring(0, sentence.indexOf(" "));
+      result += engToPig(word) + " ";
+      sentence = sentence.substring(sentence.indexOf(" ") + 1);
+    }
+    return result + engToPig(sentence); 
+  }
+  
   public static void main( String[] args ) {
 
     Scanner sc = new Scanner(System.in);
     
-    while(sc.hasNext()) 
+    while (sc.hasNextLine()) 
     {
-      System.out.println(engToPig(sc.next()));
+      System.out.println(sentenceTranslate(sc.nextLine()));
     }
     
     sc.close();
+    //dont forget to u
     //Old translation code
     /*String translated = "";
-    while ()
+    for( String word : args ) {
       translated += engToPig(word) + " ";
       System.out.println( word + " \t" + engToPig(word) );
     }
-    System.out.println(translated); 
-    */
+    System.out.println(translated);*/
+    
 
   }//end main()
 
