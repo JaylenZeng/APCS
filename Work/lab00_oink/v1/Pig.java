@@ -1,5 +1,5 @@
 /**
- *Disc Jockey: David Deng, Jaylen Zeng, Michael Kaml
+ *Disc Jockey: David Deng, Jaylen Zeng
  *APCS
  *L00 -- Etterbay Odingcay Oughthray Ollaborationcay
  *2021-11-08
@@ -8,25 +8,13 @@
  *DISCO
  *
  *QCC
- * How would one address the case where there is a blank line present in 'words.in'?
  *
- *HOW WE UTILIZED SCANNER DEMO (v2):
- *We read each word individually from the stdin and translated it to pig latin and printed the result of each word.
- *
- *WHAT CAUSES THE RUNTIME ERROR IN THE SCANNER DEMO:
- *In the scanner demo, the method sc.next() is called twice in the main method. Everytime this method is called, the scanner moves to the next line. Therefore, this causes an error because if you have an uneven amount of words in your 'words.in' file, when scanner tries to go to the next line, it will eventually run into a nonexistent line. 
- *
- *NEW IN v2:
- *Functional scanner if file contains no blank lines in between words.
- *Fixed translator so it accounts for words with no vowels and does not contain the letter 'y'
  */
-
-import java.util.Scanner;
 
 public class Pig {
 
   private static final String VOWELS = "aeiou";
-  private static final String PUNC = ".,!;-%$?:";
+  private static final String PUNC = ".,!;-%$?:"; //add any punctuation marks that might be missing
 
   public static boolean isAVowel( String letter ) {
     return VOWELS.indexOf( letter ) != -1;
@@ -80,17 +68,15 @@ public class Pig {
     String ans = "";
 
     //converts entire string to lowercase
-    String lowerw = w.toLowerCase(); 
+    String lowerw = w.toLowerCase(); //try to combine lowercase and nonpunctuation into this one line
+
+    if ( beginsWithVowel(w) )
+      ans = w + "way";
 
     //accounts for case when all other vowels are not present and only 'y' is
-    if (!hasAVowel(w)) {
+    else if (!hasAVowel(w)) {
       int yPos = w.indexOf('y');
 
-      //accounts for case where word (e.g. zzz) has no vowels at all
-      if (yPos == -1)
-      {
-        return w;
-      }
       //if y is present at beginning of word
       if (yPos == 0)
       {
@@ -119,7 +105,8 @@ public class Pig {
 
     //checks for punctuation
     if (hasPunc(w)) {
-      ans = engToPig(w.substring(0,w.length()-1)) + w.substring(w.length()-1); 
+      ans = engToPig(w.substring(0,w.length()-1)) + w.substring(w.length()-1);
+      return ans; 
     }
 
     return ans;
@@ -127,22 +114,12 @@ public class Pig {
 
   public static void main( String[] args ) {
 
-    Scanner sc = new Scanner(System.in);
-    
-    while(sc.hasNext()) 
-    {
-      System.out.println(engToPig(sc.next()));
-    }
-    
-    sc.close();
-    //Old translation code
-    /*String translated = "";
-    while ()
+    String translated = "";
+    for( String word : args ) {
       translated += engToPig(word) + " ";
       System.out.println( word + " \t" + engToPig(word) );
     }
-    System.out.println(translated); 
-    */
+    System.out.println(translated);
 
   }//end main()
 
