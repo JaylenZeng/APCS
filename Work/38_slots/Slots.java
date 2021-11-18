@@ -163,7 +163,4 @@ public class Slots {
     }//end main
 
   }//end class Slots
-<<<<<<< HEAD
 
-=======
->>>>>>> refs/remotes/origin/main
