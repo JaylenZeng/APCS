@@ -1,0 +1,5 @@
+-Create Protagonist.java and Monster.java
+-Both classes need isAlive() method. 
+-both classes also need .attach(target) method. Target should be another object of a class such as a Monster of Protag.
+-.getName() method for protagonist. Assuming it returns name player inputs at beginning of game.
+-
