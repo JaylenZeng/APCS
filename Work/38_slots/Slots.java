@@ -40,7 +40,9 @@ public class Slots {
       //allocate memory for _fruits based on size of FRUITS:
       _fruits = new String[FRUITS.length];
       //copy elements of FRUITS into _fruits:
-      _fruits=FRUITS;
+      for (int i=0; i<FRUITS.length; i++) {
+      	_fruits[i] = FRUITS[i];
+      }
     }
 
 
@@ -51,7 +53,8 @@ public class Slots {
       =====================================*/
     public String toString()
     {
-      return _fruits[0]+"--"+_fruits[1]+"--"+_fruits[2];
+      return _fruits[0] + "\t" + _fruits[1] + "\t" + _fruits[2];
+      //return _fruits[0]+"--"+_fruits[1]+"--"+_fruits[2];
     }
 
 
@@ -123,20 +126,19 @@ public class Slots {
     //main() method for testing
     public static void main( String[] args ) {
       //usage: move bar below down 1 line at a time to test functionality...
-
       Slots machine01 = new Slots();
       Slots machine02 = new Slots();
-      //test to verify slot machines function indepently
+      
       System.out.println();
       System.out.println( "Machine01 initial state:\t" + machine01 );
       System.out.println( "Machine02 initial state:\t" + machine02 );
-      System.out.println( "\nSpinning machine01 and machine02...\n" );
+      System.out.println( "\nSpinning machine01...\n" );
       machine01.spinOnce();
       System.out.println();
       System.out.println( "Machine01 state:\t" + machine01 );
-      machine02.spinOnce();
       System.out.println( "Machine02 state:\t" + machine02 );
       System.out.println();
+  
       //test gamble-until-you-win mechanism
       System.out.println( "Preparing to spin until a mini win! . . ." );
       System.out.println( "------------------------------------" );
