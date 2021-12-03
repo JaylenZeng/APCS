@@ -5,7 +5,7 @@ public class Driver {
 
     //build Objects from blueprint specified by class Coin
 
-
+/*
     //test default constructor
       Coin mine = new Coin();
       //test 1st overloaded constructor
@@ -29,6 +29,14 @@ public class Driver {
       else {
         System.out.println( "No match. Firestarter you can not be." );
       }
+*/
+      Coin drop = new Coin();
+      Coin dead = new Coin();
+      Coin fred = new Coin();
+      System.out.println( drop == dead );
+	System.out.println( drop == fred );
+	System.out.println( drop.equals(dead));
+	System.out.println( drop.equals(fred));	
     /*===================TOP==========================
       ====================BOTTOM======================*/
 
