@@ -1,7 +1,16 @@
-// Clyde "Thluffy" Sinclair
-// APCS pd0
-// HW43 -- encapsulation (basic SuperArray functionality)
-// 2021-12-07t
+/*
+Team Incredibly Cohesive (David Chen, Jaylen Zeng, Orion Roven)
+APCS pd7
+HW43 -- Array of Steel
+12/6/21
+time elapsed: 0.3 hours
+DISCO:
+*We can change the size of our arrays by creating a completely new one.
+Ex: Assuming _data orginally has 10 indices, _data = new int[20];
+Now _data should have 20 indices.
+*
+QCC:
+*/
 
 /***************************
  * class SuperArray
@@ -88,4 +97,3 @@ public class SuperArray
 
 
 }//end class
-
