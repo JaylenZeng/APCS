@@ -3,9 +3,11 @@ Team Incredibly Cohesive (David Chen, Jaylen Zeng, Orion Roven)
 APCS pd7
 HW43 -- Array of Grade 316
 12/7/21
-time elapsed: 0. hours
+time elapsed: 0.8 hours
 DISCO:
+our program requires a ton of memory because we have to create new temporary arrays and loop through them so the visualizer isn't helpful because it exceeds the time limit
 QCC:
+is there a simpler way to code toString() so that we don't have to loop through the array and exceed the visualizer time limit
 */
 
 /***************************
@@ -87,6 +89,15 @@ public class SuperArray {
         _size++;
     }
 
+    public void remove() {
+      int[] temp = new int[this._size-1];
+      for (int i=0; i<_size-1; i++) {
+          temp[i]=_data[i];
+      }
+      _data=temp;
+      _size--;
+    }
+
     public void remove(int index) {
         int[] temp = new int[this._size-1];
         for (int i=0; i<_size-1; i++) {
@@ -106,7 +117,6 @@ public class SuperArray {
 
     // main method for testing
     public static void main(String[] args) {
-      /*
         SuperArray curtis = new SuperArray();
         System.out.println("Printing empty SuperArray curtis...");
         System.out.println(curtis);
@@ -126,13 +136,16 @@ public class SuperArray {
         ra.add(5);
         System.out.println("Ra after adding 5: ");
         System.out.println(ra);
-        ra.addAtIndex(2, 7);
+        ra.add(2, 7);
         System.out.println("AddAtIndex ra: ");
         System.out.println(ra);
-        System.out.println("Removing at item...");
+        System.out.println("Removing value at index 2...");
+        ra.remove(2);
+        System.out.println(ra);
+        System.out.println("Removing, no parameters");
         ra.remove();
         System.out.println(ra);
-      */
+      /*
       SuperArray curtis = new SuperArray();
       System.out.println( "Printing empty SuperArray curtis..." );
       System.out.println( curtis );
@@ -173,10 +186,10 @@ public class SuperArray {
       mayfield.add(1,77);
       System.out.println("Printing SuperArray mayfield post-insert...");
       System.out.println(mayfield);
+      */
       /*~~~~~~~~move~me~down~~~~~~~~~~~~~~V~~~~~~~~
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~*/
     }// end main()
 
 }
 // end class
-
