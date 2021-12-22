@@ -83,13 +83,20 @@ public class Rational implements Comparable {
         this.denominator /= gcd;
     }
 
-    public int compareTo(Rational num) {
-        if (this.floatValue() > num.floatValue()) {
-            return 1;
-        } else if (this.floatValue() < num.floatValue()) {
-            return -1;
+    public int compareTo(Object num) {
+        if (num instanceof Rational) {
+          Rational r = (Rational)num;
+          if (this.floatValue() > r.floatValue()) {
+              return 1;
+          } else if (this.floatValue() < r.floatValue()) {
+              return -1;
+          }
+          return 0;
         }
-        return 0;
+        else {
+          System.out.println("compareTo() input is not a Rational");
+          return -2;
+        }
     }
 
 }
