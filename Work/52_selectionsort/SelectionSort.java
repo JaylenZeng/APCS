@@ -1,18 +1,20 @@
-// .gitignore (David Chen, Jaylen Zeng, Yat Long Chan)
+// dot_gitignore : David Chen, Jaylen Zeng, Yat Long Chan
 // APCS pd7
 // HW52 -- implementing selection sort
-// 2022-01-05
+// 2022-01-05w
 // time spent:  0.5 hrs
 
 /******************************
  *   class SelectionSort -- implements SelectionSort algorithm
  *
  * ALGO:
-  1) Find most extreme element
-  2) swap end element with most extreme
-  3) repeat
+   1) Find most extreme element
+   2) swap end element with most extreme
+   3) repeat
+ *
  * DISCO
- * N/A
+ * nothing new
+ *
  * QCC
  * q0: How many passes to sort n elements?
  * a0: n-1 passes
@@ -21,7 +23,7 @@
  * q2: How do you know if sorted?
  * a2: When n-1 passes are completed
  * q3: What does a pass boil down to?
- * a3: Swapping once so that one element will be in its correct location.
+ * a3: swapping most extreme element in array with end index. 
  ******************************/
 
 
@@ -68,23 +70,29 @@ public class SelectionSort
 
     //maxPos will point to position of SELECTION (greatest value)
     int maxPos;
-
-    for(int pass = data.size()-1; pass > 0; pass-- ) {
+    
+    for(int pass = data.size() - 1; pass > 0; pass--) {
+      
       maxPos = pass;
       System.out.println( "\nbegin pass " + (data.size()-pass) );//diag
 
+      //iterate thru next-to-last to first element and compare with last.
+      for(int i = pass - 1; i >= 0 ; i--  ) {
 
-      for(int j = pass-1; j >= 0; j--  ) {
-        if (data.get(maxPos).compareTo(data.get(j)) < 0) {
-          maxPos = j;
+        //if element at i > element at maxPos, new maxPos = i
+        if (data.get(i).compareTo(data.get(maxPos)) > 0) {
+          maxPos = i;
         }
 
         System.out.println( "maxPos: " + maxPos );//diag
         System.out.println( data );//diag
       }
+      
+      //swap last element with element at maxPos.
       Comparable temp = data.get(pass);
       data.set(pass, data.get(maxPos));
       data.set(maxPos, temp);
+
       System.out.println( "after swap: " +  data );//diag
 
 
@@ -130,7 +138,8 @@ public class SelectionSort
     /*===============for VOID methods=============
       ============================================*/
 
-      glen = new ArrayList<Integer>();
+      /*==========for AL-returning methods==========
+      ArrayList glen = new ArrayList<Integer>();
       glen.add(7);
       glen.add(1);
       glen.add(5);
@@ -141,17 +150,15 @@ public class SelectionSort
       System.out.println( "sorted version of ArrayList glen:\n"
       + glenSorted );
       System.out.println( "ArrayList glen after sorting:\n" + glen );
-      coco = populate( 10, 1, 1000 );
+      ArrayList coco = populate( 10, 1, 1000 );
       System.out.println( "ArrayList coco before sorting:\n" + coco );
       ArrayList cocoSorted = selectionSort( coco );
       System.out.println( "sorted version of ArrayList coco:\n"
       + cocoSorted );
       System.out.println( "ArrayList coco after sorting:\n" + coco );
       System.out.println( coco );
-      /*==========for AL-returning methods==========
       ============================================*/
 
   }//end main
 
 }//end class SelectionSort
-
