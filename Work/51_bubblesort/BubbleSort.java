@@ -8,9 +8,10 @@
  * class BubbleSort -- implements bubblesort algorithm (vanilla)
  *
  * ALGO:
- 1)Starting at the right, compare elements adjacent to one another and swap them if necessary for sortedness
+ 0)Initialize variable that keeps track of how many swaps have occurred. 
+ 1)Starting at the right, compare elements adjacent to one another and swap them if necessary for sortedness. Add to swap counter accordingly.
  2)Continue this process until you reach the leftmost element
- 3)Because the necessary number of passes to ensure sortedness is n-1 where n is the number of elements in the original array, repeat this process n-1 times
+ 3)If number stored in swap counter is greater than zero, restart the process from the beginning. Swap counter is also reset if this is the case.
  * DISCO
  * N/A
  * QCC
