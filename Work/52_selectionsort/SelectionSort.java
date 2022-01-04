@@ -1,8 +1,8 @@
-// dot_gitignore : David Chen, Jaylen Zeng, Yat Long Chan
+// .gitignore (David Chen, Jaylen Zeng, Yat Long Chan)
 // APCS pd7
 // HW52 -- implementing selection sort
 // 2022-01-05
-// time spent:  0.3 hrs
+// time spent:  0.5 hrs
 
 /******************************
  *   class SelectionSort -- implements SelectionSort algorithm
@@ -154,3 +154,4 @@ public class SelectionSort
   }//end main
 
 }//end class SelectionSort
+
