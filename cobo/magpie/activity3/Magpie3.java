@@ -1,3 +1,15 @@
+// dot_gitignore : David Chen, Jaylen Zeng, Yat Long Chan
+// APCS pd7
+// HW56 - cobo magpie lab
+// 2022-01-13
+// time spent: 0.5 hrs
+/**
+ * DISCO
+ * none
+ * QCC
+ * none
+ **/
+
 /**
  * A program to carry on conversations with a human user.
  * This version: 
@@ -27,26 +39,31 @@ public class Magpie3
 	 *            the user statement
 	 * @return a response based on the rules given
 	 */
-	public String getResponse(String statement)
-	{
+
+	public String getResponse(String statement) {
 		String response = "";
-		if (statement.length() == 0)
-		{
-			response = "Say something, please.";
+		if (statement.trim().length() == 0) {
+			response = "Say something, please";
 		}
-		else if (findKeyword(statement, "no") >= 0)
-		{
+
+		if (findKeyword(statement, "no", 0) >= 0) {
 			response = "Why so negative?";
-		}
-		else if (findKeyword(statement, "mother") >= 0
+		} else if (findKeyword(statement, "mother") >= 0
 				|| findKeyword(statement, "father") >= 0
 				|| findKeyword(statement, "sister") >= 0
-				|| findKeyword(statement, "brother") >= 0)
-		{
+				|| findKeyword(statement,"brother") >= 0) {
 			response = "Tell me more about your family.";
-		}
-		else
-		{
+		} else if (findKeyword(statement,"dog") >= 0 || findKeyword(statement,"cat", 0) >= 0) {
+			response = "Tell me more about your pets";
+		} else if (findKeyword(statement,"Mykolyk") >= 0) {
+			response = "Poggers, he sounds nice!";
+		} else if (findKeyword(statement,"nice") >= 0) {
+			response = "Nice, indeed";
+		} else if (findKeyword(statement,"java") >= 0) {
+			response = "Java is in Indonesia";
+		} else if (findKeyword(statement,"hello") >= 0) {
+			response = "Farewell";
+		} else {
 			response = getRandomResponse();
 		}
 		return response;
