@@ -15,11 +15,9 @@ public class more14 {
     }
 
     public static void main(String[] args) {
-        System.out.print(new int[] { 1, 4, 1 });
-        System.out.print(new int[] { 1, 4, 1, 4 });
-        System.out.print(new int[] {1, 1});
-        System.out.print(new int[] {1, 6, 6});
-
-
+        System.out.println(more14(new int[] { 1, 4, 1 }));
+        System.out.println(more14(new int[] { 1, 4, 1, 4 }));
+        System.out.println(more14(new int[] {1, 1}));
+        System.out.println(more14(new int[] {1, 6, 6}));
     }
 }
