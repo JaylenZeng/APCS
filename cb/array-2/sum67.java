@@ -3,19 +3,21 @@ Return the sum of the numbers in the array, except ignore sections of numbers st
 */
 
 public class sum67 {
-    public int sum67(int[] nums) {
-        int sum = 0;
-        for (int i = 0 ; i < nums.length ; i++) {
-          if (nums[i] != 6) {
-            sum += nums[i];
-          }
-          else {
-            while (nums[i] != 7) {
-              i++;
-            }
-          }
+  public int sum67(int[] nums) {
+    int sum = 0;
+    for (int i = 0; i < nums.length; i++) {
+      if (nums[i] != 6) {
+        sum += nums[i];
+      } else {
+        while (nums[i] != 7) {
+          i++;
         }
-        return sum;
       }
-    
+    }
+    return sum;
+  }
+
+  public static void main(String[] args) {
+    System.out.println(new int[] { 2, 3, 2, 2, 4, 2 });
+  }
 }
