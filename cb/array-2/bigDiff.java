@@ -17,6 +17,5 @@ public class bigDiff {
     System.out.println(bigDiff(new int[] {10,3,5,6}));
     System.out.println(bigDiff(new int[] {7,2,10,9}));
     System.out.println(bigDiff(new int[] {2,10,7,2}));
-    
   }
 }

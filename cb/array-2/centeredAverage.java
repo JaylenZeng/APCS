@@ -5,16 +5,35 @@ ignore just one copy, and likewise for the largest value. Use int division to pr
 You may assume that the array is length 3 or more.
 */
 public class centeredAverage {
-  public static int centeredAverage(int[] nums) {
-    int average = 0;
-    int max = 0;
-    int min = 100;
-    int minCtr = 0;
-    int maxCtr = 0;
-    for(int i=0; i<nums.length; i++) {
-      max = Math.max(nums[i], max);
-      min = Math.min(nums[i], min);
+  public int centeredAverage(int[] nums) {
+    int min = nums[0];
+    int max = nums[0];
+    int sum = 0;
+    for (int i = 0; i < nums.length; i++) {
+      if (nums[i] <= min) {
+        min = nums[i];
+      }
+      else {
+        if (nums[i] > max) {
+            max = nums[i];
+        }
+      }
     }
-    for()
+    for (int i = 0; i < nums.length; i++) {
+      if (nums[i] == min) {
+        nums[i] = 0;
+        i = nums.length;
+      }
+    }
+    for (int i = 0; i < nums.length; i++) {
+      if (nums[i] == max) {
+        nums[i] = 0;
+        i = nums.length;
+      }
+    }
+    for (int num : nums) {
+      sum += num;
+    }
+    return sum/(nums.length-2);
   }
 }
