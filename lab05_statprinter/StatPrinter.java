@@ -55,7 +55,7 @@ public class StatPrinter {
     // eg, for data [2,3,2,5,2,3]
     // _frequency would be [0,0,3,2,0,1]
 
-    // O(n^2)
+    // O(n)
     public StatPrinter(ArrayList<Integer> data) {
         _frequency = new ArrayList<Integer>(max(data) + 1);
 
@@ -65,14 +65,6 @@ public class StatPrinter {
         for (int f = 0; f < data.size(); f++) {
             _frequency.set(data.get(f), _frequency.get(data.get(f)) + 1);
         }
-
-        // for (int i = 0; i < max(data) + 1; i ++){
-        // var o = 0;
-        // for (int j = 0; j < data.size(); j++) {
-        // if (data.get(j) == i) o++;
-        // }
-        // _frequency.add(o);
-        // }
     }
 
     // *************** QUESTION 01 **************************

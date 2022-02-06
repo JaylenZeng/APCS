@@ -7,13 +7,14 @@ time spent: 0.6 hrs
 
 DISCO
 ------------------------------------------------
-* 
+* Ternary conditional operators (? and :) can be used in place of traditional if-else statements. They are formatted like this: boolean statement ? true result : false result;
+* The default constructer of StatPrinter actually has a time complexity of O(n). 
 ================================================
 
 
 QCC
 ------------------------------------------------
-* 
+* N/A
 ================================================
 
 
