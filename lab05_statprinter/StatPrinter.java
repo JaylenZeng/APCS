@@ -1,4 +1,4 @@
-// Tr3o Zero (Jason Zhou, Jomin Zhang, Jaylen Zeng)
+// JZ Gang (Jason Zhou, Jomin Zhang, Jaylen Zeng)
 // APCS pd7
 // L05 -- pulling it together
 // 2022-02-03r
