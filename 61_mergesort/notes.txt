@@ -1,0 +1,17 @@
+JZ Gang (Jason Zhou, Jomin Zhang, Jaylen Zeng)
+Team Temporary Terrestrial Tetrad (Joshua Yagupsky, Jaylen Zeng)
+APCS pd7
+HW34: Instructions so Simple...
+2022-02-08t
+time spent: 1 hr
+
+DISCO
+------------------------------------------------
+* Mergesort is a RECURSIVE algorithm.
+================================================
+
+
+QCC
+------------------------------------------------
+* N/A
+================================================
