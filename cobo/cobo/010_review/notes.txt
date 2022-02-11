@@ -1,0 +1,23 @@
+Jaylen Zeng 
+JZ Gang (Jason Zhou, Jomin Zhang, Jaylen Zeng)
+APCS pd7
+L05 -- pulling it together
+2022-02-03r
+time spent: 
+
+1) 
+    a) public static double sentimentVal( String word )
+    b) Yes, this method requires you to input a String. If you pass a different type of parameter, it returns 0. 
+    c) Yes the method returns a value. The return type is "double"
+
+2) 
+    METHOD CALL | RETURN value
+    abandoned     -0.09
+    corner        -0.06
+    Timmy          0
+
+3) 
+    a) Yes, this statement would compile because the parameter is a string and there are no other errors.
+    b) No, this statement would not compile because the paramater passed, 0.5, is a double and not a String. 
+    c) No, this statement would not compile because sentimentVal only takes one parameter. This statement passes two.
+
