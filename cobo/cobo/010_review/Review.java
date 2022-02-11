@@ -162,6 +162,31 @@ public class Review {
       return randomNegativeAdj();
     }
   }
+
+  //determines sentiment value of a review
+  public static double  totalSentiment(String fileName) {
+    double total = 0.0;
+    String text = textToString(fileName);
+    int start = 0;
+    int end = 0;
+    System.out.println(text);
+    for (int i = 0; i < text.length(); i++) {
+      end = text.indexOf(" ", start);
+      if (end != -1) {
+        String word = text.substring(start, end);
+        total += sentimentVal(word);
+        start = end;
+      }
+      else {
+        i = text.length();
+      }
+    }
+    //  String[] words = text.split(" ");
+    //  for (String word : words) {
+    //   total += sentimentVal(word);
+    //  }
+    return total;
+  }
   
   
   public static void main(String[] args) {
@@ -169,10 +194,12 @@ public class Review {
     System.out.println(sentimentVal("abandoned"));
     System.out.println(sentimentVal("corner"));
     System.out.println(sentimentVal("Timmy"));
-
+    /*
     double num = sentimentVal("warm");
     String word = sentimentVal(0.5);
     double x = sentimentVal("good", "bad");
+    */
 
+    System.out.println(totalSentiment("SimpleReview.txt"));
   }
 }
