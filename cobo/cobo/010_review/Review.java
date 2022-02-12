@@ -165,27 +165,45 @@ public class Review {
 
   //determines sentiment value of a review
   public static double  totalSentiment(String fileName) {
-    double total = 0.0;
+    double total = 0.0; 
     String text = textToString(fileName);
     int start = 0;
-    int end = 0;
-    System.out.println(text);
-    for (int i = 0; i < text.length(); i++) {
+    int end = text.indexOf(" ", 0);
+
+    while (end != -1) {
+      String word = text.substring(start, end);
+      total += sentimentVal(removePunctuation(word));
+      start = end + 1;
       end = text.indexOf(" ", start);
-      if (end != -1) {
-        String word = text.substring(start, end);
-        total += sentimentVal(word);
-        start = end;
-      }
-      else {
-        i = text.length();
-      }
     }
-    //  String[] words = text.split(" ");
-    //  for (String word : words) {
-    //   total += sentimentVal(word);
-    //  }
+    //Split is not a part of the course framework. 
+    /*
+     String[] words = text.split(" ");
+     for (String word : words) {
+      total += sentimentVal(word);
+     }
+    */
     return total;
+  }
+
+  public static int starRating(String fileName) {
+    int rating = 0;
+    if (totalSentiment(fileName) >= 15) {
+      rating = 4;
+    }
+    else if (totalSentiment(fileName) >= 10) {
+      rating = 3;
+    }
+    else if (totalSentiment(fileName) >= 5) {
+      rating = 2;
+    }
+    else if (totalSentiment(fileName) >= -5) {
+      rating = 1;
+    }
+    else {
+      rating = 0;
+    }
+    return rating;
   }
   
   
@@ -201,5 +219,8 @@ public class Review {
     */
 
     System.out.println(totalSentiment("SimpleReview.txt"));
+    System.out.println(totalSentiment("26WestReview.txt"));
+    System.out.println(starRating("SimpleReview.txt"));
+    System.out.println(starRating("26WestReview.txt"));
   }
 }
