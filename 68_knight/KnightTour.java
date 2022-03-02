@@ -19,7 +19,7 @@
  *  - optimization by having it keep track of a grid w/ possible movement thingies
  *  - method to prioritize smarter moves?
  *
- * *SPOILER ALERT* I REMOVED PRINTING SCREEN TO SAVE TIME BECAUSE IT WOULD TAKE TOO LONG
+ * *SPOILER ALERT* REMOVED PRINTING SCREEN TO SAVE TIME BECAUSE IT WOULD TAKE TOO LONG
  * Mean execution times for boards of size n*n:
  * n=5   0.268 s    across 5 executions 
  * n=6   0.2882 s    across 5 executions
