@@ -1,5 +1,5 @@
 /**
- * Team Something Important (Joshua Yagupsky, Jaylen Zeng, Johnathan Song)
+ * Team Something Important (Joshua Yagupsky, Jaylen Zeng, Jonathan Song)
  * APCS pd7
  * HW72 -- So So Fast
  * 2022-03-08
