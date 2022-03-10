@@ -9,23 +9,29 @@
  * class MazeSolver
  * Implements a blind depth-first exit-finding algorithm.
  * Displays probing in terminal.
- * 
- * USAGE: 
+ *
+ * USAGE:
  * $ java Maze [path/to/mazefile]
  * (mazefile is ASCII representation of a maze, using symbols below)
  *
  * ALGORITHM for finding exit from starting position:
  *  From the starting position, find a possible move on the PATH in this order: up, right, left down.
  *  In other words, if there is a possible move in all 4 directions, up will always be chosen.
- *  Once a position is reached where the HERO cannot move (usually because of a dead-end), 
- *  return to a position where a move is possible. 
+ *  Once a position is reached where the HERO cannot move (usually because of a dead-end),
+ *  return to a position where a move is possible.
  *  During this process, replace spaces that have no moves with VISITED_PATH
- *  Repeat until EXIT is reached. 
+ *  Repeat until EXIT is reached.
  *
  * DISCO
+<<<<<<< Updated upstream
  * This was pretty similar to the Knight's tour problem, and so we were able to use pretty much the same implementation.
  * QCC
  * How can we make sure the character reaches the exit? That is, what happens if the character starts in a spot that doesn't connect to the exit?
+=======
+ *
+ * QCC
+ *
+>>>>>>> Stashed changes
  ***/
 
 //enable file I/O
@@ -35,7 +41,7 @@ import java.util.*;
 
 class MazeSolver
 {
-  final private int FRAME_DELAY = 50;
+  final private int FRAME_DELAY = 10;
 
   private char[][] _maze;
   private int h, w; // height, width of maze
@@ -132,7 +138,6 @@ class MazeSolver
    **/
   public void solve( int x, int y )
   {
-    delay( FRAME_DELAY ); //slow it down enough to be followable
 
     //primary base case
     if ( _solved ) {
@@ -145,24 +150,26 @@ class MazeSolver
         return;
     }
     else if ( !onPath(x, y) ) {
-        return; 
+        return;
     }
     //otherwise, recursively solve maze from next pos over,
     //after marking current location
     else {
+      delay( FRAME_DELAY ); //slow it down enough to be followable
+
       _maze[x][y] = HERO;
       System.out.println(this); // refresh screen
-      
+
       solve(x, y - 1);
       solve(x + 1, y);
       solve(x, y + 1);
       solve(x - 1, y);
-      
+
       //prevents unnecessary backtracking if last move before exit was left.
       if (_solved) {
           solve(x,y);
       }
-      
+
       //If you get here then there are no more possible moves / you reached a dead end.
       _maze[x][y] = VISITED_PATH;
       System.out.println( this ); //refresh screen
@@ -203,7 +210,7 @@ public class Maze
     //drop hero into the maze (coords must be on path)
     // ThinkerTODO: comment next line out when ready to randomize startpos
     //ms.solve( 4, 7 );
-    
+
     //drop our hero into maze at random location on path
     int startX = (int) Math.random() * 80;
     int startY = (int) Math.random() * 25;
