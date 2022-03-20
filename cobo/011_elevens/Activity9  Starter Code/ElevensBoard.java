@@ -53,7 +53,7 @@ public class ElevensBoard extends Board {
 	 */
 	@Override
 	public boolean isLegal(List<Integer> selectedCards) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
+		return containsPairSum11(selectedCards) || containsJQK(selectedCards);
 	}
 
 	/**
@@ -66,7 +66,27 @@ public class ElevensBoard extends Board {
 	 */
 	@Override
 	public boolean anotherPlayIsPossible() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
+		List<Integer> selectedCards;
+		for(int indexOf1 = 0; indexOf1 < BOARD_SIZE; indexOf1++) {
+			for(int indexOf2 = 0; indexOf2 < BOARD_SIZE; indexOf2++) {
+				if (indexOf1 != indexOf2) {
+					selectedCards = new ArrayList<Integer>();
+					selectedCards.add(indexOf1);
+					selectedCards.add(indexOf2);
+					if (containsPairSum11(selectedCards)) return true;
+				}
+				for(int indexOf3 = 0; indexOf3 < BOARD_SIZE; indexOf3++) {
+					if(!(indexOf1 == indexOf2 && indexOf2 == indexOf3)) {
+						selectedCards = new ArrayList<Integer>();
+						selectedCards.add(indexOf1);
+						selectedCards.add(indexOf2);
+						selectedCards.add(indexOf3);
+						if (containsJQK(selectedCards)) return true;
+					}
+				}
+			}
+		}
+		return false;
 	}
 
 	/**
@@ -78,7 +98,7 @@ public class ElevensBoard extends Board {
 	 *              contain an 11-pair; false otherwise.
 	 */
 	private boolean containsPairSum11(List<Integer> selectedCards) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
+		return selectedCards.size() == 2 && cardAt(selectedCards.get(0)) + cardAt(selectedCards.get(1)) == 11;
 	}
 
 	/**
@@ -90,6 +110,18 @@ public class ElevensBoard extends Board {
 	 *              include a jack, a queen, and a king; false otherwise.
 	 */
 	private boolean containsJQK(List<Integer> selectedCards) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
+		if (selectedCards.size() == 3) {
+			List<String> chooseCards = new ArrayList<String>();
+			chooseCards.add(cardAt(selectedCards.get(0)).rank());
+			chooseCards.add(cardAt(selectedCards.get(1)).rank());
+			chooseCards.add(cardAt(selectedCards.get(2)).rank());
+			chooseCards.remove("king");
+			chooseCards.remove("queen");
+			chooseCards.remove("jack");
+			return chooseCards.size()==0;
+		}
+		return false;
 	}
+
+
 }
