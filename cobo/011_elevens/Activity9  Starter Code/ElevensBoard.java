@@ -98,7 +98,7 @@ public class ElevensBoard extends Board {
 	 *              contain an 11-pair; false otherwise.
 	 */
 	private boolean containsPairSum11(List<Integer> selectedCards) {
-		return selectedCards.size() == 2 && cardAt(selectedCards.get(0)) + cardAt(selectedCards.get(1)) == 11;
+		return selectedCards.size() == 2 && (cardAt(selectedCards.get(0)).pointValue() + cardAt(selectedCards.get(1)).pointValue()) == 11;
 	}
 
 	/**
