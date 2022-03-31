@@ -23,12 +23,4 @@ public class ALStack<T> implements Stack<T> {
         stack.add(x);
     }
 
-    public String toString() {
-        String ret = "";
-        for (T e : stack) {
-            ret += e + " ";
-        }
-        return ret;
-    }
-
 }//end class

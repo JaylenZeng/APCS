@@ -4,27 +4,24 @@
  * driver/tester for Stack implementations (Linked-list-based, ArrayList-based)
  **/
 
-public class Stckr
-{
-  public static void main( String[] args )
-  {
+public class Stckr {
+  public static void main(String[] args) {
 
-    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     // USAGE: un-comment exactly 1 assignment below
-    //Stack<String> cakes = new ALStack<String>();
-    Stack<String> cakes = new LLStack<String>();
-    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Stack<String> cakes = new ALStack<String>();
+    // Stack<String> cakes = new LLStack<String>();
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    cakes.push("5");
-    cakes.push("9");
-    cakes.push("2");
-    cakes.push("4");
-    cakes.push("awrojawr");
-    cakes.push("/");
-    System.out.println(cakes.pop());
-    System.out.println(cakes.isEmpty());
-    System.out.println(cakes);
-    System.out.println(cakes.peekTop());
-  }//end main
+    String[] bob = { "Apple", "Banana", "Cranberry", "Durian", "Eggfruit", "Fig", "Grape", "Huckleberry" };
+    for (String fruit : bob) {
+      cakes.push(fruit);
+    }
+    // Prints the fruits in reverse order
+    while (!cakes.isEmpty()) {
+      System.out.println(cakes.peekTop());
+      cakes.pop();
+    }
+  }// end main
 
-}//end class
+}// end class
