@@ -1,0 +1,5 @@
+DISCOVERIES:
+-When making a method with variables, you have to declare and assign what type of variable it is. You can do this
+in the same line where you are defining the method. 
+-If you fail to assign the variable, you will get an [IDENTIFIER] error.
+
