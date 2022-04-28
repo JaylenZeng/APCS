@@ -81,7 +81,7 @@ public class CelebrityGame
 		Celebrity celeb = celebGameList.remove(0);
 		String answer;
 		do {
-			System.out.println("Clue: "+celeb.getClue());
+			System.out.println("Clue: "+ celeb.getClue());
 			answer = input("Guess (type \"give up\" to move on): ");
 			if (answer.equals("give up")) break;
 		}
@@ -130,13 +130,13 @@ public class CelebrityGame
 	{
 		Celebrity temp = new Celebrity("","");
 		
-		if (type == "Celebrity") {
+		if (type.equals("Celebrity")) {
 			temp = new Celebrity(name, guess);
 		}
-		if (type == "LiteratureCelebrity") {
+		if (type.equals("LiteratureCelebrity")) {
 			temp = new LiteratureCelebrity(name, guess);
 		}
-		if (type == "GamingCelebrity") {
+		if (type.equals("GamingCelebrity")) {
 			temp = new GamingCelebrity(name, guess);
 		}
 		
